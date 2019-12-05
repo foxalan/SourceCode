@@ -1,76 +1,41 @@
 package com.example.code;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.example.code.retrofit.GetRequestService;
 
-import java.io.IOException;
+import com.example.code.fragment.home.HomeFragment;
+import com.example.code.fragment.my.MyFragment;
+import com.example.sourcecode.activity.BaseMainActivity;
+import com.example.sourcecode.entity.PageItemBean;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+
+
+public class MainActivity extends BaseMainActivity {
 
     public static final String RETROFIT = "retrofit";
 
+    private final String selectTextColor = "#8295FE";// 导航栏默认选择字体颜色
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public int defaultSelected() {
+        return 0;
+    }
 
+    @Override
+    public ArrayList<PageItemBean> pageItemBeans() {
+        ArrayList<PageItemBean> pageItemBeans = new ArrayList<>();
+        pageItemBeans.add(new PageItemBean(R.mipmap.icon_home_selected,R.mipmap.icon_home_normal,"首页",new HomeFragment()));
+        pageItemBeans.add(new PageItemBean(R.mipmap.icon_me_selected,R.mipmap.icon_me_nromal,"我的",new MyFragment()));
+        return pageItemBeans;
+    }
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://fanyi.youdao.com/") //设置网络请求的Url地址
-                .addConverterFactory(GsonConverterFactory.create()) //设置数据解析器
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
-
-        // 创建 网络请求接口 的实例
-        GetRequestService request = retrofit.create(GetRequestService.class);
-        //对 发送请求 进行封装
-        Call<RequestBody> call = request.getCall();
-        call.enqueue(new Callback<RequestBody>() {
-            @Override
-            public void onResponse(Call<RequestBody> call, Response<RequestBody> response) {
-                Log.e(RETROFIT, "success");
-            }
-
-            @Override
-            public void onFailure(Call<RequestBody> call, Throwable t) {
-                Log.e(RETROFIT, "fail");
-            }
-        });
-
-
-        OkHttpClient client = new OkHttpClient();
-        Request request2 = new Request.Builder()
-                .url("http://www.baidu.com")
-                .build();
-
-        client.newCall(request2).enqueue(new okhttp3.Callback() {
-            @Override
-            public void onFailure(okhttp3.Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(okhttp3.Call call, okhttp3.Response response) throws IOException {
-                Log.d("kwwl","获取数据成功了");
-                Log.d("kwwl","response.code()=="+response.code());
-                Log.d("kwwl","response.body().string()=="+response.body().string());
-            }
-        });
-
-
+    @Override
+    public int selectedColor() {
+        return Color.parseColor(selectTextColor);
     }
 }
