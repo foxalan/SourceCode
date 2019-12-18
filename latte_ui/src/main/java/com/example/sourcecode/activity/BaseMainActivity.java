@@ -59,7 +59,6 @@ public abstract class BaseMainActivity extends BaseActivity {
     private void initBottomBar() {
         bottomImageViewList.clear();
         bottomTextViewList.clear();
-        Log.e("alan", pageItemBeans.size() + "====");
         for (int i = 0; i < pageItemBeans.size(); i++) {
             final int position = i;
             PageItemBean pageItemBean = pageItemBeans.get(i);

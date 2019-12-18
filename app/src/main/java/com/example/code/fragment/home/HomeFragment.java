@@ -1,6 +1,7 @@
 package com.example.code.fragment.home;
 
 import android.view.View;
+import android.widget.Toolbar;
 
 
 import com.example.code.R;
@@ -11,6 +12,7 @@ import com.example.sourcecode.fragment.BaseBottomFragment;
  * function:
  */
 public class HomeFragment extends BaseBottomFragment {
+
 
 
     @Override

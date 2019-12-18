@@ -1,1 +1,1 @@
-include ':app', ':latte_ui'
+include ':app', ':latte_ui', ':xrecyclerview'
