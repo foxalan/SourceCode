@@ -8,6 +8,9 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.1'
+
+        //添加依赖，如果studio是3.0以上版本，建议使用v1.1.1
+        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.0'
         
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

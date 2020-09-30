@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+//或者这样也可以
+apply plugin: 'com.hujiang.android-aspectjx'
 
 android {
     compileSdkVersion 30
@@ -70,4 +72,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     api project(path: ':tfive_function')
+    //aspectjrt的依赖
+    implementation 'org.aspectj:aspectjrt:1.8.14'
 }
