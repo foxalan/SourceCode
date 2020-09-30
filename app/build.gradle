@@ -23,8 +23,6 @@ android {
             keyPassword '123456'
         }
     }
-
-
     defaultConfig {
         applicationId "com.alan.threefive"
         minSdkVersion 15
@@ -42,6 +40,8 @@ android {
             zipAlignEnabled true
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "boolean", "SKIP_MSG_CHECK_ENT", "${SKIP_MSG_CHECK_PRODUCT}"
         }
         debug {
             /* 是否应该生成可调试的apk */
@@ -55,6 +55,8 @@ android {
             /* 签名类型 */
             signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            //添加后 Make project
+            buildConfigField "boolean", "SKIP_MSG_CHECK_ENT", "${SKIP_MSG_CHECK_TEST}"
         }
     }
 }
