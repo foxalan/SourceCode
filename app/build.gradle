@@ -3,6 +3,28 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 30
     buildToolsVersion "29.0.2"
+
+    signingConfigs {
+//        找不到assmbleRelease 可以在other中找
+//        keytool -genkey -alias MyAndroidKey.keystore
+//        -keyalg RSA
+//        -validity 20000
+//        -keystore MyAndroidKey.keystore
+        debug {
+            storeFile file('../keystore/MyAndroidKey.keystore')
+            storePassword '123456'
+            keyAlias 'MyAndroidKey.keystore'
+            keyPassword '123456'
+        }
+        release {
+            storeFile file('../keystore/MyAndroidKey.keystore')
+            storePassword '123456'
+            keyAlias 'MyAndroidKey.keystore'
+            keyPassword '123456'
+        }
+    }
+
+
     defaultConfig {
         applicationId "com.alan.threefive"
         minSdkVersion 15
@@ -11,10 +33,28 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            /* 是否应该生成可调试的apk */
+            debuggable = true
+            /* 是否开启代码混淆，默认false */
+            minifyEnabled = false
+            /*删除没有用到的资源 有可能会影响到动态获取资源的地方 为true时 minifyEnabled 必须为true*/
+            shrinkResources false
+            /*是否移除无用资源*/
+            zipAlignEnabled true
+            /* 签名类型 */
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
         }
     }
 }
