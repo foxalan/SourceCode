@@ -1,1 +1,1 @@
-include ':app', ':tfive_function'
+include ':app', ':tfive_function', ':tfive_ui'

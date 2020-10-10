@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.alan.tfive_ui.dialog.LoaderManager;
+import com.alan.tfive_ui.dialog.base.GravityDialogFrag;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
@@ -22,5 +25,17 @@ public class MainActivity extends AppCompatActivity {
         } else { Log.e("ALAN","RE");
             textView.setText("DERE");
         }
+
+        LoaderManager.showCustomDialog(getSupportFragmentManager(), "TITLE", "CON", new GravityDialogFrag.OnClickListener() {
+            @Override
+            public void onConfirm() {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+        });
     }
 }

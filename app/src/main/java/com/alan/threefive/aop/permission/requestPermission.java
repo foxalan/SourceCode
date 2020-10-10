@@ -5,6 +5,6 @@ package com.alan.threefive.aop.permission;
  * function:
  */
 public @interface requestPermission {
-    
+
     String[] value();
 }

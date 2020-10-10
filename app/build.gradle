@@ -74,4 +74,5 @@ dependencies {
     api project(path: ':tfive_function')
     //aspectjrt的依赖
     implementation 'org.aspectj:aspectjrt:1.8.14'
+    implementation project(path: ':tfive_ui')
 }

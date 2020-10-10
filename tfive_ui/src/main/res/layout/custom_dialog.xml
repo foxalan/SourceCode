@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/custom_dialog_bg"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:textStyle="bold"
+            android:text="TITLE"
+            android:id="@+id/tvDialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <TextView
+            android:textColor="#333333"
+            android:id="@+id/tvDialogContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_horizontal|top"
+            android:textSize="14sp" />
+        <View
+            android:background="#EEEEEE"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+
+        <LinearLayout
+            android:id="@+id/lLayoutConfirmCancel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:gravity="center"
+                android:text="本次"
+                android:background="@android:color/transparent"
+                android:id="@+id/btnDialogCancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#999999"
+                android:textSize="17sp" />
+            <View
+                android:id="@+id/view_dilaog_line"
+                android:background="#EEEEEE"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:gravity="center"
+                android:textColor="#4F5FCE"
+                android:text="定期評估"
+                android:background="@android:color/transparent"
+                android:id="@+id/btnDialogConfirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
