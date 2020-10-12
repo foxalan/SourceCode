@@ -1,2 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.alan.tfive_ui" />
+    package="com.alan.tfive_ui" >
+
+    <application>
+        <activity
+            android:theme="@style/Translucent"
+            android:name=".activity.permission.PermissionActivity" />
+    </application>
+</manifest>
