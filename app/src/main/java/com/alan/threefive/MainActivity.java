@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
             textView.setText("DERE");
         }
 
-        LoaderManager.showCustomDialog(getSupportFragmentManager(), "TITLE", "CON", new GravityDialogFrag.OnClickListener() {
+        LoaderManager.showCustomDialog(getSupportFragmentManager(), "TITLE", "CON",
+                new GravityDialogFrag.OnClickListener() {
             @Override
             public void onConfirm() {
 

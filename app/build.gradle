@@ -71,8 +71,10 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    api project(path: ':tfive_function')
     //aspectjrt的依赖
     implementation 'org.aspectj:aspectjrt:1.8.14'
-    implementation project(path: ':tfive_ui')
+    // 功能包
+    api project(path: ':tfive_ui')
+    api project(path: ':tfive_function')
+
 }
