@@ -2,6 +2,7 @@ package com.alan.threefive.application;
 
 import android.app.Application;
 
+import com.alan.tfive_function.database.DatabaseManager;
 import com.alan.tfive_function.launchstarter.TaskDispatcher;
 import com.alan.threefive.task.ConfigurationTask;
 
@@ -22,6 +23,8 @@ public class MyApplication extends Application {
                 .start();
 
         TaskDispatcher.createInstance().await();
+
+        DatabaseManager.getInstance().init(getApplicationContext());
 
     }
 }

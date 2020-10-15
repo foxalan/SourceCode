@@ -6,9 +6,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.alan.tfive_ui.dialog.LoaderManager;
-import com.alan.tfive_ui.dialog.base.GravityDialogFrag;
 
+
+/**
+ * 1.数据库
+ * 2.RecyclerView
+ * 3.网络
+ * 4.图片加载
+ * 5.LOG 辅助类
+ */
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
@@ -26,17 +32,6 @@ public class MainActivity extends AppCompatActivity {
             textView.setText("DERE");
         }
 
-        LoaderManager.showCustomDialog(getSupportFragmentManager(), "TITLE", "CON",
-                new GravityDialogFrag.OnClickListener() {
-            @Override
-            public void onConfirm() {
 
-            }
-
-            @Override
-            public void onCancel() {
-
-            }
-        });
     }
 }
