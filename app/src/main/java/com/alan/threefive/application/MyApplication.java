@@ -2,7 +2,7 @@ package com.alan.threefive.application;
 
 import android.app.Application;
 
-import com.alan.tfive_function.database.DatabaseManager;
+import com.alan.tfive_function.database.TFDatabaseCreator;
 import com.alan.tfive_function.launchstarter.TaskDispatcher;
 import com.alan.threefive.task.ConfigurationTask;
 
@@ -10,6 +10,9 @@ import com.alan.threefive.task.ConfigurationTask;
 /**
  * @author alan
  * function:
+ * 1.数据库添加
+ *    todo 外JOIN相关知识
+ *
  */
 public class MyApplication extends Application {
 
@@ -23,8 +26,6 @@ public class MyApplication extends Application {
                 .start();
 
         TaskDispatcher.createInstance().await();
-
-        DatabaseManager.getInstance().init(getApplicationContext());
-
+        TFDatabaseCreator.getInstance().init(getApplicationContext());
     }
 }

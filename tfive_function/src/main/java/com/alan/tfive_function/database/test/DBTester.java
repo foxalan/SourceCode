@@ -3,7 +3,7 @@ package com.alan.tfive_function.database.test;
 import android.content.ContentValues;
 import android.content.Context;
 
-import com.alan.tfive_function.database.DatabaseManager;
+import com.alan.tfive_function.database.TFDatabaseCreator;
 import com.alan.tfive_function.database.table.Student;
 import com.alan.tfive_function.database.table.Teacher;
 
@@ -25,13 +25,13 @@ public class DBTester {
     public void testSave(){
         Teacher teacher = new Teacher();
         teacher.name = "王老师";
-        long teacherId = DatabaseManager.with().save(teacher);
+        long teacherId = TFDatabaseCreator.with().save(teacher);
 
         Student student = new Student();
         student.teacherId = teacherId;
         student.name = "小学生";
         student.age = 20;
-        long id = DatabaseManager.with().save(student);
+        long id = TFDatabaseCreator.with().save(student);
 
     }
 
@@ -44,12 +44,12 @@ public class DBTester {
             student.teacherId = 1; // 假设都是ID为1的教师的学生
             students.add(student);
         }
-        int count = DatabaseManager.with().saveAll(students);
+        int count = TFDatabaseCreator.with().saveAll(students);
 
     }
 
     public void testCount() {
-        int count = DatabaseManager.with()
+        int count = TFDatabaseCreator.with()
                 .withTable(Student.class)
                 .withWhere("age > ?", 5)
                 .applyCount();
@@ -57,19 +57,19 @@ public class DBTester {
     }
 
     public void testSearchById() {
-        Student student = DatabaseManager.with()
+        Student student = TFDatabaseCreator.with()
                 .withTable(Student.class)
                 .applySearchById(1);
     }
 
     public void testSearchAll(){
-        List<Student> students = DatabaseManager.with()
+        List<Student> students = TFDatabaseCreator.with()
                 .withTable(Student.class)
                 .applySearchAsList();
     }
 
     public void testSearch(){
-        List<Student> students = DatabaseManager.with()
+        List<Student> students = TFDatabaseCreator.with()
                 .withTable(Student.class)
                 .withWhere("age>?", 5)
                 .applySearchAsList();
@@ -80,7 +80,7 @@ public class DBTester {
         ContentValues values = new ContentValues();
         values.put("name", "hello baby");
 
-        int count = DatabaseManager.with()
+        int count = TFDatabaseCreator.with()
                 .withTable(Student.class)
                 .withWhere("age<?", 5)
                 .applyUpdate(values);

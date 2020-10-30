@@ -16,9 +16,9 @@ import com.alan.tfive_function.database.sqlite.MySQLiteOpenHelper;
  *
  * 1.初始化所有的数据库和所有的表
  */
-public class DatabaseManager {
+public class TFDatabaseCreator {
 
-    private static DatabaseManager databaseManager = new DatabaseManager();
+    private static TFDatabaseCreator TFDatabaseCreator = new TFDatabaseCreator();
     private SQLiteDatabase sqLiteDatabase;
     private static SqlOperate sqlOperate;
 
@@ -36,8 +36,8 @@ public class DatabaseManager {
     }
 
 
-    public static DatabaseManager getInstance(){
-        return databaseManager;
+    public static TFDatabaseCreator getInstance(){
+        return TFDatabaseCreator;
     }
 
 }
