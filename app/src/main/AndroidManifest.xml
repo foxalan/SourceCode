@@ -5,6 +5,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
 
 
 
@@ -24,6 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:name=".MainTestActivity" />
+        <activity android:name=".function.record.DailyRecordActivity" />
+        <activity android:name=".function.record.DailyRecordWriteActivity" />
 
         <meta-data android:name="DATABASE" android:value="five.db" />
         <meta-data android:name="VERSION" android:value="1" />

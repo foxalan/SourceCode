@@ -37,9 +37,9 @@ public class MainServer {
             String info = "这里是服务器端，我们接受到了你的请求信息，正在处理...处理完成！";
             outputStream.write(info.getBytes());
             outputStream.close();
+
             socket.close();
         }
-
     }
 
 }

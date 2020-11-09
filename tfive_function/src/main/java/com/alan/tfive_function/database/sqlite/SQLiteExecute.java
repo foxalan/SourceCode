@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.alan.tfive_function.database.annotation.Column;
 import com.alan.tfive_function.database.annotation.Table;
 import com.alan.tfive_function.database.helper.ReflectTools;
+import com.alan.tfive_function.database.table.DailyRecord;
 import com.alan.tfive_function.database.table.Entity;
 import com.alan.tfive_function.database.table.UserInfo;
 
@@ -24,7 +25,10 @@ public class SQLiteExecute {
     private final List<Class<? extends Entity>> mTableClasses = new ArrayList<>();
 
     public SQLiteExecute(){
+        //添加用户表
         mTableClasses.add(UserInfo.class);
+        //日常信息表
+        mTableClasses.add(DailyRecord.class);
     }
 
 

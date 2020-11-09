@@ -1,5 +1,7 @@
 package com.alan.tfive_ui.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
@@ -53,7 +55,7 @@ public abstract class TFBaseActivity extends AppCompatActivity {
      * @return
      */
     public boolean isStatusBarTransparent(){
-        return false;
+        return true;
     }
 
     /**
@@ -63,6 +65,12 @@ public abstract class TFBaseActivity extends AppCompatActivity {
      */
     public void setStatusBarColor(int color, int statusBarAlpha){
         StatusUtil.setColor(this, color, statusBarAlpha);
+    }
+
+
+    public static void startActivity(Context context){
+        Intent intent = new Intent(context,TFBaseActivity.class);
+        context.startActivity(intent);
     }
 
 }

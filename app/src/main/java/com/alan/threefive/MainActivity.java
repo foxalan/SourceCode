@@ -1,11 +1,23 @@
 package com.alan.threefive;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityManager;
+import android.app.AppOpsManager;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Process;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
+import com.alan.threefive.function.record.DailyRecordActivity;
+
+import java.lang.reflect.Method;
+import java.util.List;
 
 
 /**
@@ -18,6 +30,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
+    private boolean isEnd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +38,100 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text);
 
-        if (BuildConfig.SKIP_MSG_CHECK_ENT) {
-            Log.e("ALAN","DEBUG");
-            textView.setText("DEBUG");
-        } else { Log.e("ALAN","RE");
-            textView.setText("DERE");
+//        if (BuildConfig.SKIP_MSG_CHECK_ENT) {
+//            Log.e("ALAN","DEBUG");
+//            textView.setText("DEBUG");
+//        } else { Log.e("ALAN","RE");
+//            textView.setText("DERE");
+//        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+
+            if (isAllowed() == 1) {
+
+            }
         }
 
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            if (!Settings.canDrawOverlays(this)) {
+//                //若未授权则请求权限
+//                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+//                intent.setData(Uri.parse("package:" + getPackageName()));
+//                startActivityForResult(intent, 0);
+//            }
+//        }
 
+
+//        startActivity(new Intent(MainActivity.this,MainTestActivity.class));
+
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(3000);
+//                    if (!isRunForeground()){
+//                        isEnd = true;
+//                    }
+//                    Log.e("TANG","waiting");
+//                    startActivity(new Intent(MainActivity.this,MainTestActivity.class));
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (isEnd){
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            startActivity(new Intent(MainActivity.this,MainTestActivity.class));
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private int isAllowed() {
+        AppOpsManager ops = (AppOpsManager) getSystemService(Context.APP_OPS_SERVICE);
+        try {
+            int op = 10021;
+            Method method = ops.getClass().getMethod("checkOpNoThrow", new Class[]{int.class, int.class, String.class});
+            Integer result = (Integer) method.invoke(ops, op, Process.myUid(), getPackageName());
+            return result == AppOpsManager.MODE_ALLOWED ? 0 : 1;
+
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+    /** 判断程序是否在前台运行（当前运行的程序） */
+    public boolean isRunForeground() {
+        ActivityManager activityManager = (ActivityManager) getApplicationContext()
+                .getSystemService(Context.ACTIVITY_SERVICE);
+        String packageName = getApplicationContext().getPackageName();
+        List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager
+                .getRunningAppProcesses();
+        if (appProcesses == null)
+            return false;
+        for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+            if (appProcess.processName.equals(packageName)
+                    && appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                return true;// 程序运行在前台
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 日常记录
+     * @param view
+     */
+    public void onDailyRecord(View view){
+        startActivity(new Intent(MainActivity.this,DailyRecordActivity.class));
     }
 }
