@@ -20,6 +20,7 @@ public class DailyRecordActivity extends TFBaseActivity {
 
     private static final String TAG = "dailyRecord";
     private List<DailyRecord> dailyRecords;
+    private RecordAdapter recordAdapter;
 
 
     @Override

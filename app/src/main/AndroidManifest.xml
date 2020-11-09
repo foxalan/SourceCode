@@ -29,8 +29,10 @@
         <activity
             android:launchMode="singleTop"
             android:name=".MainTestActivity" />
-        <activity android:name=".function.record.DailyRecordActivity" />
-        <activity android:name=".function.record.DailyRecordWriteActivity" />
+        <activity
+            android:name=".function.record.DailyRecordActivity" />
+        <activity
+            android:name=".function.record.DailyRecordWriteActivity" />
 
         <meta-data android:name="DATABASE" android:value="five.db" />
         <meta-data android:name="VERSION" android:value="1" />

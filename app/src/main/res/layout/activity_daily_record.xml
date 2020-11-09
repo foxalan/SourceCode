@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
+        android:paddingTop="@dimen/x40"
         android:background="@color/colorToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -23,6 +24,13 @@
             android:layout_height="wrap_content" />
 
     </androidx.appcompat.widget.Toolbar>
+
+    <com.alan.tfive_ui.recycler.group.XRecyclerView
+        android:id="@+id/ryc_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.alan.tfive_ui.recycler.group.XRecyclerView>
 
 
 </LinearLayout>
