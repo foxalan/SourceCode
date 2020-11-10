@@ -22,6 +22,7 @@ public class RecordAdapter extends CommonRecycleAdapter<DailyRecord> {
     private static final String STUDY_TAG = "STUDY:";
     private static final String JET_TAG = "JET:";
     private static final String PHONE_TAG = "PHONE:";
+    private static final String TOTAL_TAG = "TOTAL:";
 
     public RecordAdapter(Context context, List<DailyRecord> mData, int layoutId) {
         super(context, mData, layoutId);
@@ -44,5 +45,11 @@ public class RecordAdapter extends CommonRecycleAdapter<DailyRecord> {
 
         TextView tvPhone = holder.getView(R.id.tv_daily_phone);
         tvPhone.setText(PHONE_TAG + dailyRecord.pointPhone);
+
+        TextView tvTotal = holder.getView(R.id.tv_daily_total);
+        tvTotal.setText(TOTAL_TAG + dailyRecord.totalPoint);
+
+        TextView tvDate = holder.getView(R.id.tv_daily_date);
+        tvDate.setText(dailyRecord.date);
     }
 }

@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/x8"
         android:layout_marginTop="@dimen/x8"
-        android:text="1224455" />
+         />
 
     <TextView
         android:id="@+id/tv_daily_study"
@@ -70,6 +70,28 @@
         android:layout_marginLeft="@dimen/x28"
         android:layout_marginTop="@dimen/x8"
         android:text="1224455" />
+
+    <TextView
+        android:textColor="@android:color/holo_red_dark"
+        android:id="@+id/tv_daily_total"
+        android:layout_below="@id/tv_daily_phone"
+        android:gravity="center"
+        android:layout_toRightOf="@id/tv_daily_sport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x28"
+        android:layout_marginTop="@dimen/x8"
+        android:text="1224455" />
+
+
+    <TextView
+        android:id="@+id/tv_daily_date"
+        android:layout_marginRight="@dimen/x20"
+        android:text="2017:15:4"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>

@@ -111,6 +111,7 @@ public class DailyRefreshHandler {
 
         if (isEnd){
             Toast.makeText(context,"已经没有数据了",Toast.LENGTH_LONG).show();
+            xRecyclerView.setNoMore(true);
         }else {
             if (endPosition+num>totalNum){
                 isEnd = true;

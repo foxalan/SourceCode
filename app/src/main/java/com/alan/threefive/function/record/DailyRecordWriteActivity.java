@@ -3,16 +3,19 @@ package com.alan.threefive.function.record;
 import android.view.View;
 import android.widget.EditText;
 
-import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.alan.tfive_function.database.TFDatabaseCreator;
 import com.alan.tfive_function.database.table.DailyRecord;
 import com.alan.tfive_ui.activity.TFBaseActivity;
 import com.alan.threefive.R;
 
+import java.util.Calendar;
+
 /**
  * @author alan
  * function: 数据写入界面
+ * todo:
+ * 1.UI优化
  */
 public class DailyRecordWriteActivity  extends TFBaseActivity {
 
@@ -23,6 +26,9 @@ public class DailyRecordWriteActivity  extends TFBaseActivity {
     private EditText mEtJet;
     private EditText mEtPhone;
 
+    private static final int POINT_SPORT = 1;
+    private static final int POINT_JET = -20;
+    private static final int POINT_PHONE = -2;
 
     @Override
     public int getContentLayout() {
@@ -57,13 +63,17 @@ public class DailyRecordWriteActivity  extends TFBaseActivity {
         int phone = Integer.parseInt(mEtPhone.getText().toString());
 
         DailyRecord dailyRecord = new DailyRecord();
-        dailyRecord.date = "0";
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH)+1;
+        int day = c.get(Calendar.MONDAY);
+        dailyRecord.date = year+"-"+month+"-"+day;
         dailyRecord.pointSport = sport;
         dailyRecord.pointEyes = eye;
         dailyRecord.pointStudy = study;
         dailyRecord.pointJet = jet;
         dailyRecord.pointPhone = phone;
-        dailyRecord.totalPoint = 100;
+        dailyRecord.totalPoint = (sport+eye+study)*POINT_SPORT+jet*POINT_JET+phone*POINT_PHONE;
 
         TFDatabaseCreator.with().save(dailyRecord);
     }

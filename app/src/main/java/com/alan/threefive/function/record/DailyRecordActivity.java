@@ -11,14 +11,15 @@ import com.alan.threefive.R;
  * @author alan
  * function:
  * todo:
- * 1.添加EmptyView
- * 2.上拉刷新下拉加载
+ * 1.添加EmptyView     --
+ * 2.上拉刷新下拉加载 ----
+ * 3.点击事件未添加
+ * 4.UI优化
  */
 public class DailyRecordActivity extends TFBaseActivity {
 
-    private static final String TAG = "dailyRecord";
-    private XRecyclerView mRycDailyRecord;
 
+    private XRecyclerView mRycDailyRecord;
 
     @Override
     public int getContentLayout() {

@@ -17,7 +17,7 @@
 
         <EditText
             android:layout_centerVertical="true"
-            android:hint="5"
+            android:hint="1"
             android:id="@+id/et_sport_number"
             android:inputType="number"
             android:layout_alignParentRight="true"
@@ -39,7 +39,7 @@
 
         <EditText
             android:layout_centerVertical="true"
-            android:hint="5"
+            android:hint="1"
             android:id="@+id/et_eye_number"
             android:inputType="number"
             android:layout_alignParentRight="true"
@@ -61,7 +61,7 @@
 
         <EditText
             android:layout_centerVertical="true"
-            android:hint="5"
+            android:hint="1"
             android:id="@+id/et_study_number"
             android:inputType="number"
             android:layout_alignParentRight="true"
@@ -83,7 +83,7 @@
 
         <EditText
             android:layout_centerVertical="true"
-            android:hint="5"
+            android:hint="1"
             android:id="@+id/et_phone_number"
             android:inputType="number"
             android:layout_alignParentRight="true"
@@ -105,7 +105,7 @@
 
         <EditText
             android:layout_centerVertical="true"
-            android:hint="5"
+            android:hint="0"
             android:id="@+id/et_jet_number"
             android:inputType="number"
             android:layout_alignParentRight="true"
