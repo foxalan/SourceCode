@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/iv_daily_status"
+        android:layout_margin="@dimen/x8"
+        android:background="@color/colorToolbar"
+        android:layout_width="@dimen/x64"
+        android:layout_height="@dimen/x64" />
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="@android:color/holo_blue_bright"
+        android:id="@+id/tv_daily_sport"
+        android:gravity="center"
+        android:layout_toRightOf="@id/iv_daily_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x8"
+        android:layout_marginTop="@dimen/x8"
+        android:text="SPORT:1" />
+
+    <TextView
+        android:textColor="@android:color/holo_blue_bright"
+        android:id="@+id/tv_daily_eye"
+        android:gravity="center"
+        android:layout_below="@id/tv_daily_sport"
+        android:layout_toRightOf="@id/iv_daily_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x8"
+        android:layout_marginTop="@dimen/x8"
+        android:text="1224455" />
+
+    <TextView
+        android:id="@+id/tv_daily_study"
+        android:gravity="center"
+        android:layout_below="@id/tv_daily_eye"
+        android:layout_toRightOf="@id/iv_daily_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x8"
+        android:layout_marginTop="@dimen/x8"
+        android:text="1224455" />
+
+    <TextView
+        android:textColor="@android:color/holo_red_dark"
+        android:id="@+id/tv_daily_jet"
+        android:gravity="center"
+        android:layout_toRightOf="@id/tv_daily_sport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x28"
+        android:layout_marginTop="@dimen/x8"
+        android:text="1224455" />
+
+    <TextView
+        android:textColor="@android:color/holo_red_dark"
+        android:id="@+id/tv_daily_phone"
+        android:layout_below="@id/tv_daily_jet"
+        android:gravity="center"
+        android:layout_toRightOf="@id/tv_daily_sport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x28"
+        android:layout_marginTop="@dimen/x8"
+        android:text="1224455" />
+
+
+</RelativeLayout>

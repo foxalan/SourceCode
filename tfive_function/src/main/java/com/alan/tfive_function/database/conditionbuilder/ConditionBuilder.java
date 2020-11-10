@@ -178,6 +178,32 @@ public class ConditionBuilder<T extends Entity> implements BuilderSupport<T>{
     }
 
     /**
+     *
+     * @param startPosition
+     * @param endPosition
+     * @return todo  待优化
+     */
+    public List<T> applySearchAsListBy(int startPosition,int endPosition){
+        Cursor c = applySearch();
+        List<T> entities = new ArrayList<>();
+        try {
+            while (c.moveToNext()) {
+                T table = getContent(c, clazz);
+                if (table != null) {
+                    entities.add(table);
+                }
+            }
+        } catch (SQLiteException e) {
+            Log.e(TAG, "applySearchAsList() error: " + getTraceInfo(e));
+            return entities;
+        } finally {
+            c.close();
+        }
+        List<T> newEntities = entities.subList(startPosition,endPosition);
+        return newEntities;
+    }
+
+    /**
      * Apply search first row with condition
      *
      * @return first item of result

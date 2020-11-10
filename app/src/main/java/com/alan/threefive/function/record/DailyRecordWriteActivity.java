@@ -3,6 +3,8 @@ package com.alan.threefive.function.record;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+
 import com.alan.tfive_function.database.TFDatabaseCreator;
 import com.alan.tfive_function.database.table.DailyRecord;
 import com.alan.tfive_ui.activity.TFBaseActivity;

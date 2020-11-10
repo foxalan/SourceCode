@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <!--日常-->
+    <style name="DailyTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor"> @color/colorToolbar</item>
+    </style>
+
 </resources>
