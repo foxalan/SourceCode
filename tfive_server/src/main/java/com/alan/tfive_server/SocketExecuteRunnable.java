@@ -1,20 +1,25 @@
 package com.alan.tfive_server;
 
-import java.io.BufferedOutputStream;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.Socket;
 
 /**
  * @author alan
  * function:
  */
-public class SocketExcuteRunable implements Runnable {
+public class SocketExecuteRunnable implements Runnable {
 
     private Socket socket;
+    //请求类型
+    private String requestType;
+    //请求Url
+    private String url;
 
-    public SocketExcuteRunable(Socket socket){
+
+
+    public SocketExecuteRunnable(Socket socket){
         this.socket = socket;
     }
 
@@ -31,15 +36,22 @@ public class SocketExcuteRunable implements Runnable {
                 //注意指定编码格式，发送方和接收方一定要统一，建议使用UTF-8
                 sb.append(new String(bytes, 0, len,"UTF-8"));
             }
-            System.out.println("get message from client: " + sb);
-            OutputStream outputStream = socket.getOutputStream();
-            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream);
-            String buffer = "buffer";
-            bufferedOutputStream.write(buffer.getBytes());
+            System.out.println("从客户端得到的信息 ");
+            System.out.println(sb.toString());
+            String[] requestArray =  sb.toString().split("\r\n");
+            String[] strings2 = requestArray[0].split(" ");
+            requestType = strings2[0];
+            url = strings2[1];
+            System.out.println("请求TYPE: "+requestType);
+            System.out.println("请求URL: "+url);
+
+
+
             socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
+
 }
