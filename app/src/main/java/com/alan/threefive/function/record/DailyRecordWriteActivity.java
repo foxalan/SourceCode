@@ -66,7 +66,7 @@ public class DailyRecordWriteActivity  extends TFBaseActivity {
         Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH)+1;
-        int day = c.get(Calendar.MONDAY);
+        int day = c.get(Calendar.DAY_OF_MONTH);
         dailyRecord.date = year+"-"+month+"-"+day;
         dailyRecord.pointSport = sport;
         dailyRecord.pointEyes = eye;

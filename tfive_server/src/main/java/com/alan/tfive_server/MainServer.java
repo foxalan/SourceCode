@@ -16,7 +16,7 @@ import java.net.Socket;
 public class MainServer {
 
     public static void main(String[] args) throws IOException {
-        int port = 8080;
+        int port = 18080;
         ServerSocket server = new ServerSocket(port);
         // server将一直等待连接的到来
         System.out.println("server start");
@@ -27,6 +27,9 @@ public class MainServer {
             //todo 使用线程池代替
             new Thread(new SocketExecuteRunnable(socket)).start();
         }
+
+//        ClientServer mclient = new ClientServer(this,9989);
+//        mclient.start();  //开启监听
     }
 
 }

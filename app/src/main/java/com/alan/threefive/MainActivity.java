@@ -9,11 +9,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.os.Process;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.alan.tfive_ui.activity.TFBaseActivity;
+import com.alan.threefive.aop.doubleclick.SingleClick;
 import com.alan.threefive.function.record.DailyRecordActivity;
 
 import java.lang.reflect.Method;
@@ -27,58 +30,29 @@ import java.util.List;
  * 4.图片加载
  * 5.LOG 辅助类
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends TFBaseActivity {
 
     private TextView textView;
     private boolean isEnd;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        textView = findViewById(R.id.text);
+    public int getContentLayout() {
+        return R.layout.activity_main;
+    }
 
-//        if (BuildConfig.SKIP_MSG_CHECK_ENT) {
-//            Log.e("ALAN","DEBUG");
-//            textView.setText("DEBUG");
-//        } else { Log.e("ALAN","RE");
-//            textView.setText("DERE");
-//        }
+    @Override
+    public void initView() {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+    }
 
-            if (isAllowed() == 1) {
+    @Override
+    public void initData() {
 
-            }
-        }
+    }
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            if (!Settings.canDrawOverlays(this)) {
-//                //若未授权则请求权限
-//                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
-//                intent.setData(Uri.parse("package:" + getPackageName()));
-//                startActivityForResult(intent, 0);
-//            }
-//        }
-
-
-//        startActivity(new Intent(MainActivity.this,MainTestActivity.class));
-
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(3000);
-//                    if (!isRunForeground()){
-//                        isEnd = true;
-//                    }
-//                    Log.e("TANG","waiting");
-//                    startActivity(new Intent(MainActivity.this,MainTestActivity.class));
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }).start();
+    @Override
+    public void initEvent() {
 
     }
 
@@ -133,5 +107,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void onDailyRecord(View view){
         startActivity(new Intent(MainActivity.this,DailyRecordActivity.class));
+    }
+
+    /**
+     * Aop 双击测试
+     */
+    public void onAopSingleClick(){
+        Log.e("AOP","AOP singleClick");
+
     }
 }
