@@ -11,7 +11,8 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="我的日常"
+            android:id="@+id/tv_month"
+            android:text="月份"
             android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -33,6 +34,7 @@
 
         <com.alan.threefive.function.record.DailyRecordView
             android:background="@color/colorAccent"
+            android:id="@+id/dailyRecordView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -45,6 +47,212 @@
         android:layout_height="wrap_content">
 
     </com.alan.tfive_ui.recycler.group.XRecyclerView>
+
+    <TextView
+        android:textSize="30sp"
+        android:textColor="@color/colorToolbar"
+        android:id="@+id/tvResult"
+        android:text="+18"
+        android:gravity="center"
+        android:padding="@dimen/x10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_payment_text"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginTop="@dimen/x30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订单金额"
+                android:textColor="#FF999999"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:layout_below="@id/tv_payment_text"
+                android:id="@+id/tv_pay_money_text"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginTop="@dimen/x10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SPORT"
+                android:textColor="#FF999999"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_below="@id/tv_pay_money_text"
+                android:id="@+id/tv_youhi_text"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginTop="@dimen/x10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="优惠金额"
+                android:textColor="#FF999999"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:visibility="gone"
+                android:text="tv_order"
+                android:id="@+id/tv_order_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/x30"
+                android:layout_marginRight="@dimen/x30"
+                android:textColor="#FF333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_below="@id/tv_order_money"
+                android:layout_marginRight="@dimen/x30"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@id/tv_pay_money_text"
+                android:id="@+id/tv_pay_money"
+                android:layout_marginTop="@dimen/x10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2,200.00元"
+                android:textColor="#FF333333"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:visibility="gone"
+                android:text="privilleage"
+                android:id="@+id/tv_privilege_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay_money"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/x10"
+                android:layout_marginRight="@dimen/x30"
+                android:textColor="#FF333333"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:layout_below="@id/rl_money"
+            android:id="@+id/tv_pay_receiving_text"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EYE"
+            android:textColor="#FF999999"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_below="@id/tv_pay_receiving_text"
+            android:id="@+id/tv_pay_use_found_text"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STUDY"
+            android:textColor="#FF999999"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_pay_use_account_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_pay_use_found_text"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="@dimen/x10"
+            android:text="PHONE"
+            android:textColor="#FF999999"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_below="@id/tv_pay_use_account_text"
+            android:id="@+id/tv_pay_use_serial_text"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JET"
+            android:textColor="#FF999999"
+            android:textSize="14sp"
+            />
+
+
+        <TextView
+            android:layout_marginRight="@dimen/x30"
+            android:layout_below="@id/rl_money"
+            android:id="@+id/tv_pay_receiving"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收款方"
+            android:textColor="#FF333333"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_marginRight="@dimen/x30"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_pay_receiving"
+            android:id="@+id/tv_pay_use_found"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:textColor="#FF333333"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_marginRight="@dimen/x30"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_pay_use_found"
+            android:id="@+id/tv_pay_use_account"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="付款账户"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="14sp"
+            />
+
+        <TextView
+
+            android:text="流水号"
+            android:id="@+id/tv_pay_use_serial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_pay_use_account"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_marginRight="@dimen/x30"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="14sp" />
+
+
+
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>

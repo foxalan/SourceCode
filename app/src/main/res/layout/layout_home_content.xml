@@ -5,13 +5,6 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="主页内容"
-        android:layout_height="wrap_content" />
-
     <Button
         android:id="@+id/bt_daily_record"
         android:text="Daily record"
@@ -23,6 +16,7 @@
         android:layout_height="60dp" />
 
     <Button
+        android:layout_below="@id/bt_daily_record"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:onClick="onAopSingleClick"
