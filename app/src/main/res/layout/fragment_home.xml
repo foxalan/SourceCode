@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:tooltipText="首页"
+        android:paddingTop="20dp"
+        android:background="@color/colorToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.alan.tfive_ui.recycler.group.XRecyclerView
+        android:id="@+id/rl_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.alan.tfive_ui.recycler.group.XRecyclerView>
+
+</LinearLayout>

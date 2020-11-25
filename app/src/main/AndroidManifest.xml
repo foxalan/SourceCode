@@ -8,8 +8,6 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
 
-
-
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -26,9 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:launchMode="singleTop"
-            android:name=".MainTestActivity" />
         <activity
             android:name=".function.record.DailyRecordActivity" />
         <activity

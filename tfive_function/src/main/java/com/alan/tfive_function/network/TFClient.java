@@ -5,7 +5,9 @@ import okhttp3.OkHttpClient;
 
 /**
  * @author alan
- * function:
+ * function: 网络功能
+ * 1.基本请求，返回成功失败
+ *
  */
 public class TFClient {
 
@@ -13,10 +15,8 @@ public class TFClient {
     private String url;
 
     public TFClient(String url){
-
         this.url = url;
         OkHttpClient okHttpClient = new OkHttpClient();
-
     }
 
     public void request(Callback callback){

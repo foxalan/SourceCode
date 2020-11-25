@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x186">
+
+    <ImageView
+        android:layout_marginRight="@dimen/x2"
+        android:layout_marginBottom="@dimen/x2"
+        android:scaleType="fitXY"
+        android:id="@+id/iv_item_first_frame"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/iv_item_video_play"
+        android:src="@mipmap/icon_video_player"
+        android:layout_centerInParent="true"
+        android:layout_width="@dimen/x64"
+        android:layout_height= "@dimen/x64"/>
+
+    <CheckBox
+        android:gravity="center"
+        android:button="@drawable/selector_video_choose"
+        android:id="@+id/iv_item_check"
+        android:layout_width="@dimen/x36"
+        android:layout_height="@dimen/x36"
+        android:layout_marginBottom="@dimen/x16"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/x16"
+        android:scaleType="centerCrop"
+       />
+
+</RelativeLayout>
