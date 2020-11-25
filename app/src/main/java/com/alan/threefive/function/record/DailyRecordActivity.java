@@ -105,10 +105,6 @@ public class DailyRecordActivity extends TFBaseActivity {
                 }
             }
         });
-
-
-
-
     }
 
     @Override
