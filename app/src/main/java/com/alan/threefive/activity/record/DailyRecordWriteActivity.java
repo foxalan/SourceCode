@@ -1,4 +1,4 @@
-package com.alan.threefive.function.record;
+package com.alan.threefive.activity.record;
 
 import android.view.View;
 import android.widget.EditText;

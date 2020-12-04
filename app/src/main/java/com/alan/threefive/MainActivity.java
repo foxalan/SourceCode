@@ -5,7 +5,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.alan.tfive_ui.activity.TFBaseActivity;
-import com.alan.threefive.function.record.DailyRecordActivity;
+import com.alan.threefive.activity.record.DailyRecordActivity;
 
 /**
  * 1.数据库                               ----
@@ -30,6 +30,11 @@ public class MainActivity extends TFBaseActivity {
     }
 
     @Override
+
+
+
+
+
     public void initData() {
 
     }
@@ -39,11 +44,6 @@ public class MainActivity extends TFBaseActivity {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-    }
 
     /**
      * 日常记录

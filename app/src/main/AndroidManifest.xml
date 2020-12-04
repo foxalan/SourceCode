@@ -25,9 +25,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".function.record.DailyRecordActivity" />
+            android:name=".activity.record.DailyRecordActivity" />
         <activity
-            android:name=".function.record.DailyRecordWriteActivity" />
+            android:name=".activity.record.DailyRecordWriteActivity" />
 
         <meta-data android:name="DATABASE" android:value="five.db" />
         <meta-data android:name="VERSION" android:value="1" />

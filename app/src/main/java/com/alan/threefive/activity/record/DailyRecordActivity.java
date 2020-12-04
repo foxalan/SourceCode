@@ -1,9 +1,8 @@
-package com.alan.threefive.function.record;
+package com.alan.threefive.activity.record;
 
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.alan.tfive_function.database.table.DailyRecord;
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import static com.alan.threefive.function.record.DailyRecordView.RECORD_TYPE_DAY;
+import static com.alan.threefive.activity.record.DailyRecordView.RECORD_TYPE_DAY;
 
 
 /**

@@ -2,17 +2,14 @@ package com.alan.threefive.application;
 
 import android.app.Application;
 
-import com.alan.tfive_function.database.TFDatabaseCreator;
 import com.alan.tfive_function.launchstarter.TaskDispatcher;
 import com.alan.threefive.task.ConfigurationTask;
+import com.alan.threefive.task.DatabaseTask;
 
 
 /**
  * @author alan
  * function:
- * 1.数据库添加
- *    todo 外JOIN相关知识
- *
  */
 public class MyApplication extends Application {
 
@@ -21,11 +18,13 @@ public class MyApplication extends Application {
         super.onCreate();
 
         TaskDispatcher.init(this);
-        TaskDispatcher.createInstance().
-                addTask(new ConfigurationTask())
+        TaskDispatcher.createInstance()
+                //全局常量
+                .addTask(new ConfigurationTask(getApplicationContext()))
+                //数据库
+                .addTask(new DatabaseTask(getApplicationContext()))
                 .start();
 
         TaskDispatcher.createInstance().await();
-        TFDatabaseCreator.getInstance().init(getApplicationContext());
     }
 }

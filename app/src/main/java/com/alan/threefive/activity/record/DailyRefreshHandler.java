@@ -1,4 +1,4 @@
-package com.alan.threefive.function.record;
+package com.alan.threefive.activity.record;
 
 import android.content.Context;
 import android.os.Handler;
