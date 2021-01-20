@@ -61,6 +61,10 @@ android {
             buildConfigField "boolean", "SKIP_MSG_CHECK_ENT", "${SKIP_MSG_CHECK_TEST}"
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
